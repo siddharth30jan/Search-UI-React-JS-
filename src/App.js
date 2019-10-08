@@ -2,6 +2,7 @@ import React, {Component}from 'react'
 import Cardlist from './Cardlist'
 import {robots} from './robots'
 import Searchbox from './Searchbox'
+import ErrorHandler from './ErrorHandler'
 
 
 class App extends Component{
@@ -28,7 +29,9 @@ class App extends Component{
         <div className='tc'>
         <h1 >Robofriends</h1>
          <Searchbox onchange={this.onchange}/>
-        <Cardlist robots={filtered_search}/>
+         <ErrorHandler>
+         <Cardlist robots={filtered_search}/>
+         </ErrorHandler>
          </div>
         )
     }
